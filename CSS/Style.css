@@ -1,0 +1,373 @@
+/* Start Variables */
+:root {
+    --main-color: #1569c7; 
+    --transparent-color: rgba(15, 115, 143, 0.616);
+}
+/* End Variables */
+
+/* Universal styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* Start Components */
+.main-heading {
+    text-align: center;
+    color: var(--main-color);
+   
+}
+.main-heading h2 {
+    font-weight: normal;
+    font-size: 40px;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+.main-heading h2::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color:var(--main-color);
+    bottom: -30px;
+    width: 120px;
+}
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--main-color);
+    bottom: -38px;
+    background-color: white;
+}
+
+  /* End Components */
+
+html {
+    scroll-behavior: smooth;
+   
+}
+/* body{
+    text-transform: capitalize;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    /* display: grid; */
+    /* background-color: rgb(9, 91, 241); */
+    
+/* } */ 
+/* Start Background ____________________________________________________________ */
+body {
+    text-transform: capitalize;
+    position: relative;
+    /* background-color: black; */
+    overflow-x: hidden;
+}
+/* Background for the entire page */
+.star-background {
+    position: fixed; /* Ensures the stars stay in the background when scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Places it behind the content */
+    overflow: hidden;
+    pointer-events: none;
+    background: transparent; /* Keeps background transparent to see stars */
+}
+/* Styling individual stars _____________________________________________*/
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    width: 2px;
+    height: 2px;
+    animation: twinkle 5s infinite ease-in-out;
+}
+/* Star twinkling animation ____________________________________________*/
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.2;
+    }
+}
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+#galaxyCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Ensures the canvas stays behind everything else */
+}
+/* End Background ____________________________________________________________ */
+/* Start Header ___________________________________________________________*/
+header {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    /* background-color: rgba(0, 0, 0, 0.5); Add background color for better readability */
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+header .container::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #a2a2a2;
+    bottom: 0;
+    width: calc(100% - 40px);
+    left: 20px;
+}
+header .logo {
+    height: 40px;
+    font-size: 40px;
+    color: var(--main-color);
+}
+header nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+ul {
+    list-style: none;
+}
+header nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+header nav .toggle-menu {
+    color: white;
+    font-size: 22px;
+    padding: 20px;
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    header nav .toggle-menu {
+        display: none;
+    }
+}
+@media (max-width: 767px) {
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        /* background-color: rgba(0, 0, 0, 0.5); */
+    }
+
+    header nav:hover ul,
+    header nav:focus-within ul {
+        display: flex;
+    }
+
+    header nav ul li a {
+        padding: 15px !important;
+    }
+}
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 40px 10px;
+    display: block;
+    font-size: 14px;
+    transition: color 0.3s, border-bottom 0.3s;
+    position: relative;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+/* End Header _____________________________________________________________*/
+/* Start Scroll To Top Button_________________________________________ */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var( --main-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+.scroll-to-top:hover {
+    background-color: #0d9b8a;
+}
+  /* End Scroll To Top Button _____________________________________________*/
+/* Start landing________________________________________________________ */
+.landing {
+    min-height: 100vh;
+    position: relative;
+}
+
+.landing .content {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    background-color:var(--transparent-color);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    width: 70%; 
+    transition: max-height 0.5s ease, opacity 0.5s ease, width 0.5s ease; 
+}
+
+.landing .content.show {
+        /* left: -105px; */
+        max-height: 600px;
+        opacity: 1;
+        top: 380px;
+        width: 25%;
+}
+
+@media (max-width: 767px) {
+    .landing {
+        width: 100%;
+    }
+    .landing .content {
+        max-width: 100%;
+        width: 90%; 
+    }
+}
+.landing .content h2 {
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 13px;
+}
+.landing .change-background {
+    position: absolute;
+    top: 54%;
+    left: 14px;
+    color: #e5eef5;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.landing .change-background.rotate {
+    transform: translateY(-50%) rotate(90deg); 
+}
+.landing .fa-angle-right {
+    left: 20px;
+    color: var(--main-color);
+    animation: blink 1s infinite; 
+    cursor: pointer;
+}
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5; 
+    }
+}
+.landing .fa-angle-right.clicked {
+    animation: none; 
+}
+
+/* End landing________________________________________________________ */
+/* Start About___________________________________________________________ */
+.about{
+    margin-top: 30px;
+    position: relative;
+    
+    
+}
+
+.about .text {
+    text-align: center; /* توسيط النص داخل الـ div */
+    padding: 68px; /* مسافة داخلية للنص */
+    background-color: var(--transparent-color); /* لون الخلفية */
+    font-size: x-large; /* حجم النص */
+    display: flex; /* استخدام flexbox */
+    justify-content: center; /* توسيط المحتوى أفقيًا */
+    align-items: center; /* توسيط المحتوى عموديًا */
+    margin: 0 auto; /* توسيط العنصر أفقيًا بالنسبة للحاوية */
+    max-width: 1000px; /* تحديد عرض أقصى لضمان أن النص لا يمتد بشكل كبير */
+    position: absolute;
+    left: 123px;
+    color: white;
+}
+
+/* End  About___________________________________________________________ */
+
+/* Start Travel________________________________________________________ */
+.travel {
+    position: relative;
+    margin-top: 80px; /* زيادة المسافة من الأعلى لتوفير مساحة جديدة */
+    padding: 50px 0; /* إضافة مساحة داخلية في الأعلى والأسفل */
+    background-color: var(--transparent-color); /* إضافة لون خلفية لتحديد المساحة */
+}
+
+.travel .container {
+    text-align: center; /* توسيط النص داخل الحاوية */
+}
+
+.travel .main-heading h2 {
+    font-size: 36px; /* ضبط حجم الخط إذا لزم الأمر */
+    color: var(--main-color); /* استخدام لون النص الرئيسي */
+    margin-bottom: 20px; /* إضافة مسافة أسفل العنوان */
+}
+/* End Travel__________________________________________________________ */
+

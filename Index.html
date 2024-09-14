@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa</title>
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="CSS/Style.css" />
+    <!-- Render All Elements Normally -->
+    <link rel="stylesheet" href="CSS/normalize.css" />
+    <!-- Font Awesome Library -->
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+    <!-- Start-header______________________________________________________ -->
+    <div class="star-background"></div>
+    <header>
+        <div class="container">
+            <div class="logo"><i class="fa-solid fa-user-astronaut"></i></div>
+            <nav>
+                <i class="fas fa-bars toggle-menu"></i>
+                <ul>
+                    <li><a class="active" href="#Home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#Travel">Travel</a></li>
+                    <li><a href="#VR">VR</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End-header__________________________________________________________ -->
+    <!-- Start Lsnding _______________________________________________________-->
+    <div class="landing">
+        <div class="content">
+            <h2>Exosky</h2>
+        </div>
+        <i class="fas fa-angle-right change-background fa-2x"></i>    
+            
+    </div>
+    <!-- End Landing _______________________________________________________-->
+    <!-- Start About ______________________________________________________-->
+    <div class="about" id="about">
+        <div class="container">  
+            <div class="main-heading">
+                <h2>about</h2>
+            </div>
+            <div class="text">
+              <p>
+                What would the night sky look like if you were standing on one of the many exoplanets discovered by astronomers and space missions? The list of 5500+ exoplanets at the NASA Exoplanet Archive can be combined with the latest star catalogs to translate the location and brightness of millions or even billions of stars to another perspective.
+                From that perspective, anyone could use their imagination to draw constellations, much like our ancestors did on Earth thousands of years ago.
+                Your challenge is to develop an app or interface for students that allows them to choose an exoplanet and then either display an interactive star chart or export a high-quality image for printing or viewing on a computer or virtual reality display, where they can draw and name constellations.
+
+                During the last several decades, ground and space telescopes have been mapping the sky to create accurate catalogs of billions of stars. 
+                With distance information obtained from parallax, a three-dimensional point cloud (map) can be developed to better understand our galaxy. 
+                Beyond the science, this information also allows us to visualize how the night sky would look from one of the thousands of recently discovered planets that orbit stars other than our Sun (exoplanets). 
+                From an exoplanet’s perspective, the apparent brightness of the stars in the sky would be different from what we see from Earth, and thus the set of the brightest objects would be unique for each “exosky.” 
+                A tool that enables student users to create and visualize an exosky would help them connect our galaxy and neighboring exoplanets to their own experiences with Earth’s night sky.
+                
+                Star catalogs, however, are extremely large (e.g., ESA Gaia’s DR3 catalog contains information about more than one billion stars). 
+                A tool that enables visualization of an exosky will need to determine the stars that can be “seen” from an individual exoplanet and calculate their brightness from that perspective. 
+                Although these calculations involve simple geometric operations, the sheer size of the star catalogs will make these computations challenging and potentially difficult to achieve using a personal computer or web platform.
+              </p>
+            </div>
+        </div>
+    </div>
+    <!-- End About ______________________________________________________-->
+
+    <!-- Start Travel______________________________________________________ -->
+    <!-- <div class="travel" id="travel">
+        <div class="container">   
+            <div class="main-heading">
+                <h2>Travel</h2>
+            </div>
+            
+        </div>   
+    </div> -->
+    <!-- End Travel______________________________________________________ -->
+    
+    <!-- Start Footer -->
+    <!-- <div class="footer">
+        <div class="container">
+            <p>We Are Social</p>
+            <div class="social-icons">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fas fa-home"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+            <p class="copyright">&copy; 2024 <span>Kasper</span> All Right Reserved</p>
+        </div>
+    </div> -->
+    <!-- End Footer -->
+    
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+    
+    <canvas id="galaxyCanvas"></canvas>
+
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script src="Main.js"></script>
+</body>
+</html>
